@@ -8,3 +8,12 @@
   - Aitor Pérez
   - Jhon Limones
   - Sergio Sierra Melero
+
+## Tecnologías elegidas 
+
+- PostgreSQL
+- DBDiagram
+- Github
+- Trello
+- Notion
+- tbc...
