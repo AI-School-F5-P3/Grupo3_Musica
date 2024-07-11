@@ -1,0 +1,7 @@
+config.env
+app.py
+consultas.sql
+formulario.py
+.vscode/settings.json
+templates/register.html
+usuarios.sql
