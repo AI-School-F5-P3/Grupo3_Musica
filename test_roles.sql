@@ -1,12 +1,11 @@
-SET ROLE armoniaadmin;
---tiene todos los derechos de ver y modificar datos
+SET SESSION AUTHORIZATION armoniaadmin;
 
-SET ROLE Marprofesor;
-SELECT * FROM datos_sensibles_enmascarados_profesores;
+SET SESSION AUTHORIZATION Marprofesor;
+SELECT * FROM datos_alumnos;
 --tiene derechos de (solo)ver datos de alumnos, profesores y clases y datos sensibles enmascarados de alumnos
 
-SET ROLE alumno15;
-SELECT * FROM datos_sensibles_enmascarados_alumnos;
+SET SESSION AUTHORIZATION alumno15;
+SELECT * FROM mis_datos;
 -- tiene que devolver solo sus propios datos
 RESET ROLE;
 

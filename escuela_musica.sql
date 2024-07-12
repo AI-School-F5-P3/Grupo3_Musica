@@ -37,12 +37,12 @@ CREATE OR REPLACE FUNCTION insert_alumno_with_sensitive_data(
 DECLARE
     new_alumno_id INT;
 BEGIN
-    -- Insert into alumnos
+    -- Insertar en tabla alumnos
     INSERT INTO alumnos (nombre, apellidos, edad, familiar_id)
     VALUES (p_nombre, p_apellidos, p_edad, p_familiar_id)
     RETURNING id INTO new_alumno_id;
 
-    -- Insert into datos_sensibles
+    -- Insert en tabla datos_sensibles
     INSERT INTO datos_sensibles (alumno_id, email, telefono)
     VALUES (new_alumno_id, p_email, p_telefono);
 

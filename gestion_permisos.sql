@@ -109,6 +109,17 @@ SELECT
     enmascarar_email(email) AS email
 FROM datos_sensibles;
 
+CREATE OR REPLACE VIEW datos_alumnos AS
+SELECT 
+    a.id AS alumno_id,
+    a.nombre,
+    a.apellidos,
+    a.edad,
+    enmascarar_telefono(ds.telefono) AS telefono,
+    enmascarar_email(ds.email) AS email
+FROM alumnos a
+JOIN datos_sensibles ds ON a.id = ds.alumno_id;
+
 CREATE OR REPLACE VIEW datos_sensibles_enmascarados_alumnos AS
 SELECT 
     alumno_id,
@@ -140,12 +151,33 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
+CREATE OR REPLACE VIEW mis_datos AS
+SELECT 
+    a.nombre,
+    a.apellidos,
+    a.edad,
+    CASE 
+        WHEN current_user ~ '^alumno\d+$' THEN enmascarar_telefono(ds.telefono)
+        ELSE 'Acceso Denegado'
+    END AS telefono,
+    CASE 
+        WHEN current_user ~ '^alumno\d+$' THEN enmascarar_email(ds.email)
+        ELSE 'Acceso Denegado'
+    END AS email
+FROM alumnos a
+JOIN datos_sensibles ds ON a.id = ds.alumno_id
+WHERE current_user ~ '^alumno\d+$' AND 
+      a.id = CASE 
+                WHEN current_user = 'alumno1' THEN 1
+                ELSE (substring(current_user from 'alumno(\d+)'))::INT
+             END;
 -- permisos alumnos
-GRANT SELECT ON datos_sensibles_enmascarados_alumnos TO alumno;
+GRANT SELECT ON mis_datos TO alumno;
 
 -- permisos profesores
-GRANT SELECT ON datos_sensibles_enmascarados_profesores TO profesor;
+GRANT SELECT ON datos_alumnos TO profesor;
 GRANT USAGE ON SCHEMA public TO profesor;
+
 DO $$
 DECLARE
     table_rec RECORD;
