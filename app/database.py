@@ -1,8 +1,8 @@
 '''
 Es necesario instalar:
 FastAPI.
-sqlalchemy databases <- para la conexión a la base de datos. (OJO! sugerencia de chatGPT. No he comprobado que sea necesaria.)
-asyncpg pydantic <- para la conexión a la base de datos. (OJO! sugerencia de chatGPT. No he comprobado que sea necesaria.)
+sqlalchemy databases <- para la conexión a la base de datos. 
+asyncpg pydantic <- para la conexión a la base de datos. 
 
 '''
 
