@@ -194,7 +194,20 @@ BEGIN
 END $$;
 
 
+CREATE OR REPLACE VIEW todos_los_datos AS
+SELECT 
+    a.id AS alumno_id,
+    a.nombre,
+    a.apellidos,
+    a.edad,
+    ds.telefono,
+    ds.email
+FROM alumnos a
+JOIN datos_sensibles ds ON a.id = ds.alumno_id;
+
 -- permisos admin
+GRANT SELECT ON todos_los_datos TO admin;
+
 GRANT ALL ON datos_sensibles TO admin;
 GRANT USAGE ON SCHEMA public TO admin;
 DO $$

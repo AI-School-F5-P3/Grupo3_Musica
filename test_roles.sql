@@ -1,4 +1,5 @@
 SET SESSION AUTHORIZATION armoniaadmin;
+select * from todos_los_datos;
 
 SET SESSION AUTHORIZATION Marprofesor;
 SELECT * FROM datos_alumnos;
