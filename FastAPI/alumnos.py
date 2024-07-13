@@ -48,10 +48,25 @@ async def alumno_post(alumno: Alumno):
     alumnos_fake_db.append(alumno)
   return alumno
 
+@escuela_musica.put("/alumno/")
+async def alumno_put(alumno: Alumno):
+    
+    encontrado = False
+    
+    for index, alumno_archivado in enumerate(alumnos_fake_db):
+        if alumno_archivado.id == alumno.id:
+            alumnos_fake_db[index] = alumno
+            encontrado = True
+            
+    if not encontrado:
+        return { "error" : "Alumno no encontrado" }
+			
+  
+
 
 
 def buscar_alumno(id: int):
-  alumnos = filter(lambda alumno: alumno.id == id, alumnos_fake_db)
+  alumnos = filter(lambda alumno: alumno.id == id, alumnos_fake_db) # Filtra los alumnos con el id dado
   try:
     return list(alumnos)[0]
   except:
