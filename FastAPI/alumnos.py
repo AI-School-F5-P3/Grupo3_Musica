@@ -46,7 +46,7 @@ async def alumno_post(alumno: Alumno):
    return { "error" : "El alumno ya existe" }
   else: 
     alumnos_fake_db.append(alumno)
-  return alumno
+    return alumno
 
 @escuela_musica.put("/alumno/")
 async def alumno_put(alumno: Alumno):
@@ -59,7 +59,25 @@ async def alumno_put(alumno: Alumno):
             encontrado = True
             
     if not encontrado:
-        return { "error" : "Alumno no encontrado" }
+      return { "error" : "Alumno no encontrado" }
+    else:
+      return alumno
+
+
+@escuela_musica.delete("/alumno/{id}")
+async def alumno_delete(id: int):
+  
+  encontrado = False
+  
+  for index, alumno_archivado in enumerate(alumnos_fake_db):
+        if alumno_archivado.id == id:
+            del alumnos_fake_db[index]
+            encontrado = True
+            return { "Alumno eliminado correctamente" }
+            
+  if not encontrado:
+      return { "error" : "Alumno no encontrado" }
+    
 			
   
 
