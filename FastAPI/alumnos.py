@@ -1,9 +1,9 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 escuela_musica = FastAPI()
 
-# Inicia el server: uvicorn alumnos:escuela_musica --reload
+# Inicia el server -> uvicorn alumnos:escuela_musica --reload
 
 # Entidad alumno
 class Alumno(BaseModel):
@@ -40,15 +40,17 @@ async def alumno(id : int):
   return buscar_alumno(id)
   
     
-@escuela_musica.post("/alumno/")
+@escuela_musica.post("/alumno/", status_code=201)
 async def alumno_post(alumno: Alumno):
+  
   if type(buscar_alumno(alumno.id)) == Alumno:
-   return { "error" : "El alumno ya existe" }
+    raise HTTPException(status_code=204, detail="el alumno ya existe")
+  
   else: 
     alumnos_fake_db.append(alumno)
     return alumno
 
-@escuela_musica.put("/alumno/")
+@escuela_musica.put("/alumno/", status_code=201)
 async def alumno_put(alumno: Alumno):
     
     encontrado = False
@@ -59,7 +61,8 @@ async def alumno_put(alumno: Alumno):
             encontrado = True
             
     if not encontrado:
-      return { "error" : "Alumno no encontrado" }
+      raise HTTPException(status_code=404, detail="alumno no encontrado")
+      
     else:
       return alumno
 
@@ -73,10 +76,10 @@ async def alumno_delete(id: int):
         if alumno_archivado.id == id:
             del alumnos_fake_db[index]
             encontrado = True
-            return { "Alumno eliminado correctamente" }
+            return { "alumno eliminado correctamente" }
             
   if not encontrado:
-      return { "error" : "Alumno no encontrado" }
+      return { "error" : "alumno no encontrado" }
     
 			
   
@@ -88,4 +91,4 @@ def buscar_alumno(id: int):
   try:
     return list(alumnos)[0]
   except:
-    return  { "error" : "Alumno no encontrado" }
+    return  { "error" : "alumno no encontrado" }
