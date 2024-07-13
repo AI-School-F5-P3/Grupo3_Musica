@@ -31,10 +31,20 @@ async def alumnosjson():
 async def alumnos():
   return alumnos_fake_db
 
+# Path
 @escuela_musica.get("/alumno/{id}")
 async def alumno(id : int):
+  return buscar_alumno(id)
+
+# Query
+@escuela_musica.get("/alumno/")
+async def alumno(id : int):
+  return buscar_alumno(id)
+  
+  
+def buscar_alumno(id: int):
   alumnos = filter(lambda alumno: alumno.id == id, alumnos_fake_db)
   try:
     return list(alumnos)[0]
   except:
-    return "Alumno no encontrado"
+    return  { "Error" : "Alumno no encontrado" }
