@@ -17,4 +17,8 @@
 - Trello
 - Notion
 - Flask
+- FastAPI:
+    - uvicorn server
+    - sqlAlchemy
+    - pydantic
 - tbc...
