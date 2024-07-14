@@ -1,7 +1,12 @@
 from fastapi import FastAPI
+from routers import clases, alumnos
 from typing import Union
 
 escuela_musica = FastAPI()
+
+# Routers
+escuela_musica.include_router(clases.router)
+escuela_musica.include_router(alumnos.router)
 
 # uvicorn main:escuela_musica --reload
 
