@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+from typing import List
 
 escuela_musica = FastAPI()
 
@@ -20,27 +21,27 @@ alumnos_fake_db = [Alumno(id=1, nombre="Juan", apellidos="Pérez", edad=25, tel�
                    Alumno(id=3, nombre="Pedro", apellidos="Martínez", edad=20, teléfono="456789123", correo="pedro@example.com", familiar_id=3)]
 
 
-@escuela_musica.get("/alumnosjson")
+@escuela_musica.get("/alumnosjson", response_model=List[Alumno])
 async def alumnosjson():
   return [{"id": 1, "nombre": "Juan", "apellidos": "Pérez", "edad": 25, "teléfono": "123456789", "correo": "juan@example.com", "familiar_id": 2},
           {"id": 2, "nombre": "María", "apellidos": "González", "edad": 30, "teléfono": "987654321", "correo": "maria@example.com", "familiar_id": 1},
           {"id": 3, "nombre": "Pedro", "apellidos": "Martínez", "edad": 20, "teléfono": "456789123", "correo": "pedro@example.com", "familiar_id": 3}]
 
 
-@escuela_musica.get("/alumnos")
+@escuela_musica.get("/alumnos", response_model=List[Alumno])
 async def alumnos():
   return alumnos_fake_db
 
-@escuela_musica.get("/alumno/{id}") # Path parameter
+@escuela_musica.get("/alumno/{id}", response_model=Alumno) # Path parameter
 async def alumno(id : int):
   return buscar_alumno(id)
 
-@escuela_musica.get("/alumno/") # Query parameter
+@escuela_musica.get("/alumno/", response_model=Alumno) # Query parameter
 async def alumno(id : int):
   return buscar_alumno(id)
   
     
-@escuela_musica.post("/alumno/", status_code=201)
+@escuela_musica.post("/alumno/", response_model=Alumno, status_code=201)
 async def alumno_post(alumno: Alumno):
   
   if type(buscar_alumno(alumno.id)) == Alumno:
@@ -50,7 +51,7 @@ async def alumno_post(alumno: Alumno):
     alumnos_fake_db.append(alumno)
     return alumno
 
-@escuela_musica.put("/alumno/", status_code=201)
+@escuela_musica.put("/alumno/", response_model=Alumno, status_code=201)
 async def alumno_put(alumno: Alumno):
     
     encontrado = False
@@ -79,7 +80,7 @@ async def alumno_delete(id: int):
             return { "alumno eliminado correctamente" }
             
   if not encontrado:
-      return { "error" : "alumno no encontrado" }
+      raise HTTPException(status_code=404, detail="alumno no encontrado")
     
 			
   
