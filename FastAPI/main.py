@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from routers import clases, alumnos
+from fastapi.staticfiles import StaticFiles
 from typing import Union
 
 escuela_musica = FastAPI()
@@ -7,6 +8,7 @@ escuela_musica = FastAPI()
 # Routers
 escuela_musica.include_router(clases.router)
 escuela_musica.include_router(alumnos.router)
+escuela_musica.mount("/static", StaticFiles(directory="static"), name="static")
 
 # uvicorn main:escuela_musica --reload
 
