@@ -57,3 +57,29 @@ body {
     background-color: #c82333;
     border-color: #bd2130;
 }
+
+/* Welcome Page */
+.welcome-container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    max-width: 400px;
+    margin-top: 10%;
+}
+
+.logo {
+    max-width: 300px;
+}
+
+.index_title {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+a.btn-primary {
+    margin-top: 20px;
+}
+
