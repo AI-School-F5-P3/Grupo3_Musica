@@ -14,7 +14,7 @@
 - PostgreSQL
 - DBDiagram
 - Github
-- FastAPI
+- Flask
 - Trello
 - Notion
 - tbc...
