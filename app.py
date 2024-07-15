@@ -51,6 +51,7 @@ def profesor_required(f):
 @app.route('/')
 def index():
     return render_template('index.html')
+
 # Ruta para el inicio de sesión
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -68,13 +69,7 @@ def login():
             return redirect(url_for('dashboard'))
         return jsonify({'message': 'Credenciales incorrectas'}), 401
     
-    return '''
-        <form method="post">
-            Usuario: <input type="text" name="username"><br>
-            Contraseña: <input type="password" name="password"><br>
-            <input type="submit" value="Iniciar sesión">
-        </form>
-    '''
+    return render_template('login.html')
 
 # Ruta para el dashboard
 @app.route('/dashboard')
