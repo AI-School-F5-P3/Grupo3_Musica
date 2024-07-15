@@ -1,4 +1,4 @@
---Creamos usuarios para alumnos
+-- Creamos usuarios para alumnos
 DO $$
 DECLARE
     i INT;
@@ -10,7 +10,7 @@ BEGIN
 END $$;
 
 -- Asegurarse de que tienes una columna 'login' en tu tabla 'alumnos'
-ALTER TABLE alumnos ADD COLUMN login VARCHAR(255);
+ALTER TABLE alumnos ADD COLUMN IF NOT EXISTS login VARCHAR(255);
 
 -- Actualizar los registros de alumnos para incluir el login
 DO $$
@@ -22,6 +22,7 @@ BEGIN
     END LOOP;
 END $$;
 
+-- Crear usuarios para profesores
 DO $$
 DECLARE
     name_list TEXT[] := ARRAY['Mar', 'Flor', 'Nayara', 'Marifé', 'Álvaro', 'Nieves', 'Sofía'];
@@ -36,7 +37,7 @@ BEGIN
     END LOOP;
 END $$;
 
-ALTER TABLE profesores ADD COLUMN login VARCHAR(255);
+ALTER TABLE profesores ADD COLUMN IF NOT EXISTS login VARCHAR(255);
 
 --Actualizar la columna 'login' en la tabla 'profesores'
 DO $$
@@ -51,6 +52,6 @@ BEGIN
     END LOOP;
 END $$;
 
-
+-- Crear usuario para admin
 CREATE USER armoniaadmin WITH PASSWORD '56789spain';
 GRANT admin TO armoniaadmin;

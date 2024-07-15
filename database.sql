@@ -1,3 +1,6 @@
+-- Habilitar la extensión pgcrypto
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
 -- Crear la tabla de profesores
 CREATE TABLE IF NOT EXISTS profesores (
     id SERIAL PRIMARY KEY,
@@ -48,14 +51,13 @@ BEGIN
     VALUES (p_nombre, p_apellidos, p_edad, p_familiar_id)
     RETURNING id INTO new_alumno_id;
 
-    -- Insertar en la tabla datos_sensibles
+    -- Insertar en la tabla datos sensibles
     INSERT INTO datos_sensibles (alumno_id, email, telefono)
     VALUES (new_alumno_id, p_email, p_telefono);
 
     RETURN new_alumno_id;
 END;
 $$ LANGUAGE plpgsql;
-
 
 -- Crear la tabla de clases
 CREATE TABLE IF NOT EXISTS clases (
@@ -86,7 +88,6 @@ CREATE TABLE IF NOT EXISTS clase_profesor (
     PRIMARY KEY (clase_id, profesor_id)
 );
 
-
 -- Crear la tabla de relación entre alumnos y clases
 CREATE TABLE IF NOT EXISTS alumnos_clases (
     id SERIAL PRIMARY KEY,
@@ -104,7 +105,7 @@ CREATE TABLE IF NOT EXISTS alumnos_clases (
 	  REFERENCES niveles(id)
 );
 
--- Crear la tabla de precios y descuentos
+-- Crear la tabla de precios con descuentos
 CREATE TABLE IF NOT EXISTS precios (
     id SERIAL PRIMARY KEY,
     tipo_pack VARCHAR(20) NOT NULL,
@@ -112,3 +113,38 @@ CREATE TABLE IF NOT EXISTS precios (
     descuento_segunda DECIMAL(5,2) NOT NULL,
     descuento_tercera DECIMAL(5,2) NOT NULL
 );
+
+-- Crear la tabla de inscripciones
+CREATE TABLE IF NOT EXISTS inscripciones (
+    id SERIAL PRIMARY KEY,
+    alumno_id INT NOT NULL,
+    clase_id INT NOT NULL,
+    nivel_id INT NOT NULL,
+    CONSTRAINT fk_alumno
+      FOREIGN KEY(alumno_id) 
+      REFERENCES alumnos(id),
+    CONSTRAINT fk_clase
+      FOREIGN KEY(clase_id) 
+      REFERENCES clases(id),
+    CONSTRAINT fk_nivel
+      FOREIGN KEY(nivel_id) 
+      REFERENCES niveles(id)
+);
+
+
+-- Crear la tabla de usuarios
+CREATE TABLE IF NOT EXISTS usuarios (
+    id SERIAL PRIMARY KEY,
+    login VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    rol VARCHAR(50) NOT NULL
+);
+
+-- Añadir algunos usuarios
+INSERT INTO usuarios (login, password, rol) VALUES
+('armoniaadmin', crypt('56789spain', gen_salt('bf')), 'admin'),
+('Marprofesor', crypt('Mararmonia', gen_salt('bf')), 'profesor'),
+('Florprofesor', crypt('Florarmonia', gen_salt('bf')), 'profesor');
+
+
+
