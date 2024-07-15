@@ -48,6 +48,9 @@ def profesor_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+@app.route('/')
+def index():
+    return redirect(url_for('login'))
 # Ruta para el inicio de sesión
 @app.route('/login', methods=['GET', 'POST'])
 def login():
