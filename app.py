@@ -50,7 +50,7 @@ def profesor_required(f):
 
 @app.route('/')
 def index():
-    return redirect(url_for('login'))
+    return render_template('index.html')
 # Ruta para el inicio de sesión
 @app.route('/login', methods=['GET', 'POST'])
 def login():
