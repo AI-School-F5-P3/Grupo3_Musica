@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Gestión de Clases</h1>
+<a href="/admin/clases/nueva" class="btn btn-primary mb-3">Añadir Nueva Clase</a>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Profesor</th>
+            <th>Precio Base</th>
+            <th>Tipo de Pack</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for clase in clases %}
+        <tr>
+            <td>{{ clase[0] }}</td>
+            <td>{{ clase[1] }}</td>
+            <td>{{ clase[2] }}</td>
+            <td>{{ clase[3] }}</td>
+            <td>{{ clase[4] }}</td>
+            <td>
+                <a href="/admin/clases/{{ clase[0] }}/editar" class="btn btn-secondary btn-sm">Editar</a>
+                <form action="/admin/clases/{{ clase[0] }}/eliminar" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

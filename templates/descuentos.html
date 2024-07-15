@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Gestión de Descuentos</h1>
+<a href="/admin/descuentos/nuevo" class="btn btn-primary mb-3">Añadir Nuevo Descuento</a>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Precio Base</th>
+            <th>Descuento Segunda</th>
+            <th>Descuento Tercera</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for descuento in descuentos %}
+        <tr>
+            <td>{{ descuento[0] }}</td>
+            <td>{{ descuento[1] }}</td>
+            <td>{{ descuento[2] }}</td>
+            <td>{{ descuento[3] }}</td>
+            <td>{{ descuento[4] }}</td>
+            <td>
+                <a href="/admin/descuentos/{{ descuento[0] }}/editar" class="btn btn-secondary btn-sm">Editar</a>
+                <a href="/admin/descuentos/{{ descuento[0] }}/eliminar" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

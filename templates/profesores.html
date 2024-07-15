@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Gestión de Profesores</h1>
+<a href="/admin/profesores/nuevo" class="btn btn-primary mb-3">Añadir Nuevo Profesor</a>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for profesor in profesores %}
+        <tr>
+            <td>{{ profesor[0] }}</td>
+            <td>{{ profesor[1] }}</td>
+            <td>
+                <a href="/admin/profesores/{{ profesor[0] }}/editar" class="btn btn-secondary btn-sm">Editar</a>
+                <a href="/admin/profesores/{{ profesor[0] }}/eliminar" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
