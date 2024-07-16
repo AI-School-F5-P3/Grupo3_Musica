@@ -76,3 +76,46 @@
 - **Respuesta**: Renderiza `clases.html` con la lista de clases.
 - **Errores**:
   - `500 Internal Server Error`: Error al obtener clases de la base de datos.
+
+#### `GET /admin/clases/nueva`
+- **Descripción**: Muestra el formulario para añadir una nueva clase.
+- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
+- **Respuesta**: Renderiza `nueva_clase.html` con la lista de profesores.
+
+#### `POST /admin/clases/nueva`
+- **Descripción**: Procesa la creación de una nueva clase.
+- **Parámetros**:
+  - `nombre`: Nombre de la clase.
+  - `profesor_id`: ID del profesor.
+  - `precio_base`: Precio base de la clase.
+  - `tipo_pack`: Tipo de pack de la clase.
+- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
+- **Respuesta**:
+  - `200 OK`: Redirige a la lista de clases si la creación es exitosa.
+  - `500 Internal Server Error`: Error al añadir clase a la base de datos.
+
+#### `GET /admin/clases/<int:clase_id>/editar`
+- **Descripción**: Muestra el formulario para editar una clase existente.
+- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
+- **Respuesta**: Renderiza `editar_clase.html` con la información de la clase y la lista de profesores.
+
+#### `POST /admin/clases/<int:clase_id>/editar`
+- **Descripción**: Procesa la edición de una clase existente.
+- **Parámetros**:
+  - `nombre`: Nombre de la clase.
+  - `profesor_id`: ID del profesor.
+  - `precio_base`: Precio base de la clase.
+  - `tipo_pack`: Tipo de pack de la clase.
+- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
+- **Respuesta**:
+  - `200 OK`: Redirige a la lista de clases si la edición es exitosa.
+  - `500 Internal Server Error`: Error al editar clase en la base de datos.
+
+#### `POST /admin/clases/<int:clase_id>/eliminar`
+- **Descripción**: Procesa la eliminación de una clase existente.
+- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
+- **Respuesta**:
+  - `200 OK`: Redirige a la lista de clases si la eliminación es exitosa.
+  - `500 Internal Server Error`: Error al eliminar clase de la base de datos.
+
+---
