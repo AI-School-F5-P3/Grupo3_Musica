@@ -1,9 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_file
 from functools import wraps
 import psycopg2
 import os
 from dotenv import load_dotenv
 from logs import log_info, log_warning, log_error
+import pandas as pd
+import io
 
 # Cargar las variables de entorno desde un archivo .env
 load_dotenv()
