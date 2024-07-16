@@ -3,7 +3,7 @@
 {% block content %}
 <h1 class="mb-4">Gestión de Inscripciones</h1>
 {% if session.get('role') == 'admin' %}
-<a href="/admin/inscripciones/nueva" class="btn btn-primary mb-3">Añadir Nueva Inscripción</a>
+<a href="/inscripciones/nueva" class="btn btn-primary mb-3">Añadir Nueva Inscripción</a>
 {% endif %}
 <table class="table table-striped">
     <thead class="thead-dark">
@@ -26,8 +26,8 @@
             <td>{{ inscripcion[3] }}</td>
             {% if session['role'] == 'admin' %}
             <td>
-                <a href="/admin/inscripciones/{{ inscripcion[0] }}/editar" class="btn btn-secondary btn-sm">Editar</a>
-                <a href="/admin/inscripciones/{{ inscripcion[0] }}/eliminar" class="btn btn-danger btn-sm">Eliminar</a>
+                <a href="/inscripciones/{{ inscripcion[0] }}/editar" class="btn btn-secondary btn-sm">Editar</a>
+                <a href="/inscripciones/{{ inscripcion[0] }}/eliminar" class="btn btn-danger btn-sm">Eliminar</a>
             </td>
             {% endif %}
         </tr>

@@ -3,7 +3,7 @@
 {% block content %}
 <h1 class="mb-4">Gestión de Clases</h1>
 {% if session.get('role') == 'admin' %}
-<a href="/admin/clases/nueva" class="btn btn-primary mb-3">Añadir Nueva Clase</a>
+<a href="/clases/nueva" class="btn btn-primary mb-3">Añadir Nueva Clase</a>
 {% endif %}
 <table class="table table-striped">
     <thead class="thead-dark">
@@ -28,8 +28,8 @@
             <td>{{ clase[4] }}</td>
             {% if session.get('role') == 'admin' %}
             <td>
-                <a href="/admin/clases/{{ clase[0] }}/editar" class="btn btn-secondary btn-sm">Editar</a>
-                <form action="/admin/clases/{{ clase[0] }}/eliminar" method="post" style="display:inline;">
+                <a href="/clases/{{ clase[0] }}/editar" class="btn btn-secondary btn-sm">Editar</a>
+                <form action="/clases/{{ clase[0] }}/eliminar" method="post" style="display:inline;">
                     <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                 </form>
             </td>
