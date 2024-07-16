@@ -9,3 +9,13 @@
 - `@profesor_required`: Requiere que el usuario tenga el rol de profesor.
 
 ---
+
+## Rutas
+
+### Inicio
+
+#### `GET /`
+- **Descripción**: Muestra la página de inicio.
+- **Respuesta**: Renderiza `index.html`.
+
+---
