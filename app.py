@@ -227,11 +227,12 @@ def eliminar_clase(clase_id):
 def admin_inscripciones():
     try:
         cursor.execute("""
-            SELECT i.id, a.nombre || ' ' || a.apellidos AS alumno, c.nombre AS clase, n.nivel
+            SELECT i.id, a.nombre || ' ' || a.apellidos AS alumno, c.nombre AS clase, n.nivel, p.
             FROM alumnos_clases i
             JOIN alumnos a ON i.alumno_id = a.id
             JOIN clases c ON i.clase_id = c.id
-            LEFT JOIN niveles n ON i.nivel_id = n.id
+            JOIN niveles n ON i.nivel_id = n.id
+            LEFT JOIN inscripciones in ON i.inscripciones_total_fee = in.id
         """)
         inscripciones = cursor.fetchall()
         log_info('Listado de inscripciones obtenido correctamente')

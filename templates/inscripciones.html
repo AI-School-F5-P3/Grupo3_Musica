@@ -10,6 +10,7 @@
             <th>Alumno</th>
             <th>Clase</th>
             <th>Nivel</th>
+            <th>Cuota total</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -20,6 +21,7 @@
             <td>{{ inscripcion[1] }}</td>
             <td>{{ inscripcion[2] }}</td>
             <td>{{ inscripcion[3] }}</td>
+            <td>{{ inscripcion[4] }}</td>
             <td>
                 <a href="/admin/inscripciones/{{ inscripcion[0] }}/editar" class="btn btn-secondary btn-sm">Editar</a>
                 <a href="/admin/inscripciones/{{ inscripcion[0] }}/eliminar" class="btn btn-danger btn-sm">Eliminar</a>

@@ -122,6 +122,39 @@ CREATE TABLE IF NOT EXISTS precios (
     descuento_tercera DECIMAL(5,2) NOT NULL
 );
 
+
+-- Crear o reemplazar la función para calcular la cuota con descuento
+CREATE OR REPLACE FUNCTION calculate_fee_with_discount(alumno_id INT)
+RETURNS DECIMAL(5,2) AS $$
+DECLARE
+  total_fee DECIMAL(5,2) := 0;
+  class_fee DECIMAL(5,2) := 0;
+  discount DECIMAL(5,2) := 1; -- Descuento por defecto del 0%
+  incripcion_row RECORD; -- Variable para almacenar el resultado de cada fila de la consulta
+BEGIN
+  -- Verificar si el alumno tiene un familiar inscrito
+  IF EXISTS (
+    SELECT 1 
+    FROM alumnos 
+    WHERE id = alumno_id AND familiar_id IS NOT NULL 
+  ) THEN
+    -- Aplicar el 10% de descuento
+    discount := 0.90;
+  END IF;
+
+  -- Iterar sobre las inscripciones del alumno
+  FOR incripcion_row IN SELECT * FROM inscripciones WHERE alumno_id = alumno_id LOOP
+    -- Obtener el precio base de la clase
+    SELECT precio_base INTO class_fee FROM inscripciones WHERE id = incripcion_row.clase_id;
+    -- Calcular el coste total sumando el descuento
+    total_fee := total_fee + (class_fee * discount);
+  END LOOP;
+
+  RETURN total_fee;
+END;
+$$ LANGUAGE plpgsql;
+
+
 -- Crear la tabla de inscripciones
 CREATE TABLE IF NOT EXISTS inscripciones (
     id SERIAL PRIMARY KEY,
@@ -138,6 +171,27 @@ CREATE TABLE IF NOT EXISTS inscripciones (
       FOREIGN KEY(nivel_id) 
       REFERENCES niveles(id)
 );
+
+-- Modificar la tabla de inscripciones para añadir la columna total_fee
+ALTER TABLE inscripciones
+ADD COLUMN IF NOT EXISTS total_fee DECIMAL(5,2),
+CONSTRAINT;
+
+-- Crear o reemplazar la función para actualizar la cuota total de la inscripción
+CREATE OR REPLACE FUNCTION update_total_fee()
+RETURNS TRIGGER AS $$
+BEGIN
+  -- Calcular la cuota total con descuento
+  NEW.total_fee := calculate_fee_with_discount(NEW.alumno_id);
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+--Crear el trigger para actualizar la cuota total de la inscripción
+CREATE TRIGGER update_total_fee_trigger
+BEFORE INSERT OR UPDATE ON inscripciones
+FOR EACH ROW
+EXECUTE FUNCTION update_total_fee();
 
 
 -- Crear la tabla de usuarios
