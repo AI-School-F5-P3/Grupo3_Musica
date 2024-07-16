@@ -1,28 +1,11 @@
-# logs.py
-
 import logging
-from flask_sqlalchemy import SQLAlchemy
+import psycopg2
+import os
+from dotenv import load_dotenv
 from datetime import datetime
 
-# Inicializar SQLAlchemy para el modelo Log
-db = SQLAlchemy()
-
-# Definir el modelo Log
-class Log(db.Model):
-    __tablename__ = 'logs'
-
-    id = db.Column(db.Integer, primary_key=True)
-    timestamp = db.Column(db.TIMESTAMP, server_default=db.func.current_timestamp())
-    level = db.Column(db.String(10))
-    message = db.Column(db.Text)
-
-    def __init__(self, level, message):
-        self.level = level
-        self.message = message
-
-    def save_to_db(self):
-        db.session.add(self)
-        db.session.commit()
+# Cargar las variables de entorno desde un archivo .env
+load_dotenv()
 
 # Configuración básica de logging
 logging.basicConfig(
@@ -42,10 +25,28 @@ formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(path
 console_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 
-# Funciones de logging
+# Conexión a la base de datos PostgreSQL con psycopg2
+conn = psycopg2.connect(
+    dbname=os.getenv('DB_NAME'),
+    user=os.getenv('DB_USER'),
+    password=os.getenv('DB_PASSWORD'),
+    host=os.getenv('DB_HOST'),
+    port=os.getenv('DB_PORT')
+)
+cursor = conn.cursor()
+
+# Funciones de logging para insertar en la base de datos
 def log_to_database(level, message):
-    new_log = Log(level=level, message=message)
-    new_log.save_to_db()
+    timestamp = datetime.now().isoformat()
+    try:
+        cursor.execute("""
+            INSERT INTO logs (timestamp, level, message)
+            VALUES (%s, %s, %s)
+        """, (timestamp, level, message))
+        conn.commit()
+    except psycopg2.Error as e:
+        conn.rollback()
+        logger.error(f'Error al guardar log en la base de datos: {str(e)}')
 
 def log_debug(message):
     logger.debug(message)

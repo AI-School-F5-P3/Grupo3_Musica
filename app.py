@@ -3,7 +3,7 @@ from functools import wraps
 import psycopg2
 import os
 from dotenv import load_dotenv
-from logs import db, log_info, log_warning, log_error
+from logs import log_info, log_warning, log_error
 
 # Cargar las variables de entorno desde un archivo .env
 load_dotenv()
@@ -11,9 +11,8 @@ load_dotenv()
 # Inicializar la aplicación Flask
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
-db.init_app(app)
 
-# Conexión a la base de datos
+# Conexión a la base de datos con psycopg2
 conn = psycopg2.connect(
     dbname=os.getenv('DB_NAME'),
     user=os.getenv('DB_USER'),

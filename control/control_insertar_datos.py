@@ -93,3 +93,6 @@ def insertar_clase_profesor(clase_id, profesor_id):
         log_error(f"Error al asignar profesor {profesor_id} a la clase {clase_id}: {e}")
     finally:
         conn.close()
+
+INSERT INTO alumnos (nombre, apellidos, edad, familiar_id) 
+VALUES ('Juan', 'Pérez', 25, 1);

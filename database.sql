@@ -1,6 +1,13 @@
 -- database.sql
 
 -- Extensiones y creación de tablas
+CREATE TABLE logs (
+    id SERIAL PRIMARY KEY,
+    timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    level VARCHAR(10) NOT NULL,
+    message TEXT
+);
+
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 CREATE TABLE IF NOT EXISTS profesores (
@@ -51,6 +58,18 @@ BEGIN
     RETURN new_alumno_id;
 END;
 $$ LANGUAGE plpgsql;
+
+CREATE TABLE IF NOT EXISTS alumnos3 (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    apellidos VARCHAR(50) NOT NULL,
+    edad INT NOT NULL,
+    familiar_id INT,
+    CONSTRAINT fk_familiar
+      FOREIGN KEY(familiar_id) 
+      REFERENCES alumnos(id)
+);
+
 
 CREATE TABLE IF NOT EXISTS clases (
     id SERIAL PRIMARY KEY,

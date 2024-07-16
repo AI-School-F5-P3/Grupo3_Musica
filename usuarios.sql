@@ -55,3 +55,4 @@ END $$;
 -- Crear usuario para admin
 CREATE USER armoniaadmin WITH PASSWORD '56789spain';
 GRANT admin TO armoniaadmin;
+
