@@ -97,7 +97,7 @@ def dashboard():
         return jsonify({'message': 'Error al cargar el dashboard', 'error': str(e)}), 500
 
 # Ruta para la gestión de alumnos
-@app.route('/admin/alumnos')
+@app.route('/alumnos')
 @login_required
 @profesor_or_admin_required
 def admin_alumnos():
@@ -110,7 +110,7 @@ def admin_alumnos():
         return jsonify({'message': 'Error al obtener alumnos', 'error': str(e)}), 500
 
 # Ruta para la gestión de profesores
-@app.route('/admin/profesores')
+@app.route('/profesores')
 @login_required
 @admin_required
 def admin_profesores():
@@ -123,7 +123,7 @@ def admin_profesores():
         return jsonify({'message': 'Error al obtener profesores', 'error': str(e)}), 500
 
 # Ruta para la gestión de clases
-@app.route('/admin/clases')
+@app.route('/clases')
 @login_required
 @profesor_or_admin_required
 def admin_clases():
@@ -141,7 +141,7 @@ def admin_clases():
         return jsonify({'message': 'Error al obtener clases', 'error': str(e)}), 500
 
 # Ruta para añadir una nueva clase
-@app.route('/admin/clases/nueva', methods=['GET', 'POST'])
+@app.route('/clases/nueva', methods=['GET', 'POST'])
 @login_required
 @admin_required
 def nueva_clase():
@@ -168,7 +168,7 @@ def nueva_clase():
     return render_template('nueva_clase.html', profesores=profesores)
 
 # Ruta para editar una clase existente
-@app.route('/admin/clases/<int:clase_id>/editar', methods=['GET', 'POST'])
+@app.route('/clases/<int:clase_id>/editar', methods=['GET', 'POST'])
 @login_required
 @admin_required
 def editar_clase(clase_id):
@@ -200,7 +200,7 @@ def editar_clase(clase_id):
     return render_template('editar_clase.html', clase=clase, profesores=profesores)
 
 # Ruta para eliminar una clase existente
-@app.route('/admin/clases/<int:clase_id>/eliminar', methods=['POST'])
+@app.route('/clases/<int:clase_id>/eliminar', methods=['POST'])
 @login_required
 @admin_required
 def eliminar_clase(clase_id):
@@ -213,7 +213,7 @@ def eliminar_clase(clase_id):
         return jsonify({'message': 'Error al eliminar clase', 'error': str(e)}), 500
 
 # Ruta para la gestión de inscripciones
-@app.route('/admin/inscripciones')
+@app.route('/inscripciones')
 @login_required
 @admin_required
 def admin_inscripciones():
@@ -232,7 +232,7 @@ def admin_inscripciones():
         return jsonify({'message': 'Error al obtener inscripciones', 'error': str(e)}), 500
 
 # Ruta para la gestión de descuentos
-@app.route('/admin/descuentos')
+@app.route('/descuentos')
 @login_required
 @admin_required
 def admin_descuentos():

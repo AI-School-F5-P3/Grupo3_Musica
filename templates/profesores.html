@@ -3,7 +3,7 @@
 {% block content %}
 <h1 class="mb-4">Gestión de Profesores</h1>
 {% if session['role'] == 'admin' %}
-<a href="/admin/profesores/nuevo" class="btn btn-primary mb-3">Añadir Nuevo Profesor
+<a href="/profesores/nuevo" class="btn btn-primary mb-3">Añadir Nuevo Profesor
 </a>
 {% endif %}
 
@@ -24,8 +24,8 @@
             <td>{{ profesor[1] }}</td>
             {% if session['role'] == 'admin' %}
             <td>
-                <a href="/admin/profesores/{{ profesor[0] }}/editar" class="btn btn-secondary btn-sm">Editar</a>
-                <a href="/admin/profesores/{{ profesor[0] }}/eliminar" class="btn btn-danger btn-sm">Eliminar</a>
+                <a href="/profesores/{{ profesor[0] }}/editar" class="btn btn-secondary btn-sm">Editar</a>
+                <a href="/profesores/{{ profesor[0] }}/eliminar" class="btn btn-danger btn-sm">Eliminar</a>
             </td>
             {% endif %}
         </tr>

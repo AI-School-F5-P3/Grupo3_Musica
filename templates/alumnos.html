@@ -5,7 +5,7 @@
 
 <div class="students-button-container">
 {% if session['role'] == 'admin' %}
-    <a href="/admin/alumnos/nuevo" class="btn btn-primary mb-3">Añadir Nuevo Alumno</a>
+    <a href="/alumnos/nuevo" class="btn btn-primary mb-3">Añadir Nuevo Alumno</a>
 {% endif %}
 <!-- Botón para descargar CSV -->
 <a href="{{ url_for('descargar_alumnos_csv') }}" class="btn btn-success mb-3">Descargar Alumnos CSV</a>
@@ -34,8 +34,8 @@
             <td>{{ alumno[4] }}</td>
             <td>
                 {% if session['role'] == 'admin' %}
-                <a href="/admin/alumnos/{{ alumno.id }}/editar" class="btn btn-secondary btn-sm">Editar</a>
-                <a href="/admin/alumnos/{{ alumno.id }}/eliminar" class="btn btn-danger btn-sm">Eliminar</a>
+                <a href="/alumnos/{{ alumno.id }}/editar" class="btn btn-secondary btn-sm">Editar</a>
+                <a href="/alumnos/{{ alumno.id }}/eliminar" class="btn btn-danger btn-sm">Eliminar</a>
                 {% endif %}
             </td>
         </tr>
