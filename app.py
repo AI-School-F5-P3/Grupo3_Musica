@@ -256,6 +256,48 @@ def admin_descuentos():
         log_error(f'Error al obtener descuentos: {str(e)}')
         return jsonify({'message': 'Error al obtener descuentos', 'error': str(e)}), 500
     
+# Ruta para descargar la tabla alumnos_clases en CSV
+@app.route('/descargar_alumnos_csv')
+@login_required
+@admin_required
+def descargar_alumnos_csv():
+    try:
+        # Conexión a la base de datos
+        conn = psycopg2.connect(
+            dbname=os.getenv('DB_NAME'),
+            user=os.getenv('DB_USER'),
+            password=os.getenv('DB_PASSWORD'),
+            host=os.getenv('DB_HOST'),
+            port=os.getenv('DB_PORT')
+        )
+        
+        # Consulta a la tabla alumnos_clases
+        sql = "SELECT * FROM alumnos;"
+        df = pd.read_sql(sql, conn)
+        
+        # Exportar a CSV en memoria
+        csv_buffer = io.StringIO()
+        df.to_csv(csv_buffer, index=False)
+        csv_buffer.seek(0)
+        
+        log_info('Datos de la tabla alumnos exportados correctamente')
+        
+        return send_file(
+            io.BytesIO(csv_buffer.getvalue().encode('utf-8-sig')),
+            mimetype='text/csv',
+            as_attachment=True,
+            download_name='alumnos.csv'
+        )
+    except Exception as e:
+        if conn:
+            conn.rollback()
+        log_error(f'Error al exportar datos de alumnos_clases: {str(e)}')
+        return jsonify({'message': 'Error al exportar datos', 'error': str(e)}), 500
+    finally:
+        if conn:
+            conn.close()
+
+    
 # Ruta para logout
 @app.route('/logout')
 @login_required
