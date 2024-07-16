@@ -1,150 +1,341 @@
-# Documentación de la API
+# Documentación de la API de la Escuela de Música Armonía
 
-## Autenticación y Autorización
+## Descripción General
 
-### Decoradores
+Esta es la API para la gestión de la Escuela de Música Armonía. Permite la gestión de alumnos, profesores, clases, inscripciones y descuentos, así como la autenticación de usuarios y la descarga de datos en formato CSV.# Documentación de la API de la Escuela de Música Armonía
 
-- `@login_required`: Requiere que el usuario esté autenticado.
-- `@admin_required`: Requiere que el usuario tenga el rol de administrador.
-- `@profesor_required`: Requiere que el usuario tenga el rol de profesor.
+## Descripción General
 
----
+Esta es la API para la gestión de la Escuela de Música Armonía. Permite la gestión de alumnos, profesores, clases, inscripciones y descuentos, así como la autenticación de usuarios y la descarga de datos en formato CSV.
 
-## Rutas
+## Endpoints
 
 ### Inicio
 
 #### `GET /`
-- **Descripción**: Muestra la página de inicio.
-- **Respuesta**: Renderiza `index.html`.
 
----
+Renderiza la página de inicio.
 
-### Inicio de Sesión
+### Autenticación
 
 #### `GET /login`
-- **Descripción**: Muestra el formulario de inicio de sesión.
-- **Respuesta**: Renderiza `login.html`.
+
+Renderiza la página de inicio de sesión.
 
 #### `POST /login`
-- **Descripción**: Procesa las credenciales de inicio de sesión.
-- **Parámetros**:
-  - `username`: Nombre de usuario.
-  - `password`: Contraseña.
-- **Respuesta**:
-  - `200 OK`: Redirige al dashboard si las credenciales son correctas.
-  - `401 Unauthorized`: Devuelve un mensaje de error si las credenciales son incorrectas.
 
----
+Verifica las credenciales del usuario y, si son correctas, inicia una sesión y redirige al dashboard.
+
+- **Parámetros del cuerpo**:
+  - `username` (string): El nombre de usuario.
+  - `password` (string): La contraseña del usuario.
+
+- **Respuestas**:
+  - `200 OK`: Credenciales correctas, redirige al dashboard.
+  - `401 Unauthorized`: Credenciales incorrectas.
+
+#### `GET /logout`
+
+Cierra la sesión del usuario y redirige a la página de inicio.
 
 ### Dashboard
 
 #### `GET /dashboard`
-- **Descripción**: Muestra el panel de control.
-- **Autenticación**: Requiere que el usuario esté autenticado.
-- **Respuesta**: Renderiza `dashboard.html` con datos de ejemplo.
 
----
+Renderiza el dashboard con información de la escuela.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza la página del dashboard.
+  - `500 Internal Server Error`: Error al cargar el dashboard.
 
 ### Gestión de Alumnos
 
 #### `GET /admin/alumnos`
-- **Descripción**: Muestra la lista de alumnos.
-- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
-- **Respuesta**: Renderiza `alumnos.html` con la lista de alumnos.
-- **Errores**:
-  - `500 Internal Server Error`: Error al obtener alumnos de la base de datos.
 
----
+Renderiza la página de gestión de alumnos. Disponible para administradores y profesores.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza la página de alumnos.
+  - `500 Internal Server Error`: Error al obtener los datos de alumnos.
 
 ### Gestión de Profesores
 
 #### `GET /admin/profesores`
-- **Descripción**: Muestra la lista de profesores.
-- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
-- **Respuesta**: Renderiza `profesores.html` con la lista de profesores.
-- **Errores**:
-  - `500 Internal Server Error`: Error al obtener profesores de la base de datos.
 
----
+Renderiza la página de gestión de profesores. Disponible solo para administradores.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza la página de profesores.
+  - `500 Internal Server Error`: Error al obtener los datos de profesores.
 
 ### Gestión de Clases
 
 #### `GET /admin/clases`
-- **Descripción**: Muestra la lista de clases.
-- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
-- **Respuesta**: Renderiza `clases.html` con la lista de clases.
-- **Errores**:
-  - `500 Internal Server Error`: Error al obtener clases de la base de datos.
+
+Renderiza la página de gestión de clases. Disponible para administradores y profesores.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza la página de clases.
+  - `500 Internal Server Error`: Error al obtener los datos de clases.
 
 #### `GET /admin/clases/nueva`
-- **Descripción**: Muestra el formulario para añadir una nueva clase.
-- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
-- **Respuesta**: Renderiza `nueva_clase.html` con la lista de profesores.
+
+Renderiza el formulario para añadir una nueva clase. Disponible solo para administradores.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza el formulario de nueva clase.
 
 #### `POST /admin/clases/nueva`
-- **Descripción**: Procesa la creación de una nueva clase.
-- **Parámetros**:
-  - `nombre`: Nombre de la clase.
-  - `profesor_id`: ID del profesor.
-  - `precio_base`: Precio base de la clase.
-  - `tipo_pack`: Tipo de pack de la clase.
-- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
-- **Respuesta**:
-  - `200 OK`: Redirige a la lista de clases si la creación es exitosa.
-  - `500 Internal Server Error`: Error al añadir clase a la base de datos.
+
+Añade una nueva clase a la base de datos. Disponible solo para administradores.
+
+- **Parámetros del cuerpo**:
+  - `nombre` (string): El nombre de la clase.
+  - `profesor_id` (int): El ID del profesor.
+  - `precio_base` (float): El precio base de la clase.
+  - `tipo_pack` (string): El tipo de pack de la clase.
+
+- **Respuestas**:
+  - `200 OK`: Clase añadida correctamente.
+  - `500 Internal Server Error`: Error al añadir la clase.
 
 #### `GET /admin/clases/<int:clase_id>/editar`
-- **Descripción**: Muestra el formulario para editar una clase existente.
-- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
-- **Respuesta**: Renderiza `editar_clase.html` con la información de la clase y la lista de profesores.
+
+Renderiza el formulario para editar una clase existente. Disponible solo para administradores.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza el formulario de edición de clase.
 
 #### `POST /admin/clases/<int:clase_id>/editar`
-- **Descripción**: Procesa la edición de una clase existente.
-- **Parámetros**:
-  - `nombre`: Nombre de la clase.
-  - `profesor_id`: ID del profesor.
-  - `precio_base`: Precio base de la clase.
-  - `tipo_pack`: Tipo de pack de la clase.
-- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
-- **Respuesta**:
-  - `200 OK`: Redirige a la lista de clases si la edición es exitosa.
-  - `500 Internal Server Error`: Error al editar clase en la base de datos.
+
+Actualiza los datos de una clase existente en la base de datos. Disponible solo para administradores.
+
+- **Parámetros del cuerpo**:
+  - `nombre` (string): El nombre de la clase.
+  - `profesor_id` (int): El ID del profesor.
+  - `precio_base` (float): El precio base de la clase.
+  - `tipo_pack` (string): El tipo de pack de la clase.
+
+- **Respuestas**:
+  - `200 OK`: Clase actualizada correctamente.
+  - `500 Internal Server Error`: Error al actualizar la clase.
 
 #### `POST /admin/clases/<int:clase_id>/eliminar`
-- **Descripción**: Procesa la eliminación de una clase existente.
-- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
-- **Respuesta**:
-  - `200 OK`: Redirige a la lista de clases si la eliminación es exitosa.
-  - `500 Internal Server Error`: Error al eliminar clase de la base de datos.
 
----
+Elimina una clase existente de la base de datos. Disponible solo para administradores.
+
+- **Respuestas**:
+  - `200 OK`: Clase eliminada correctamente.
+  - `500 Internal Server Error`: Error al eliminar la clase.
 
 ### Gestión de Inscripciones
 
 #### `GET /admin/inscripciones`
-- **Descripción**: Muestra la lista de inscripciones.
-- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
-- **Respuesta**: Renderiza `inscripciones.html` con la lista de inscripciones.
-- **Errores**:
-  - `500 Internal Server Error`: Error al obtener inscripciones de la base de datos.
 
----
+Renderiza la página de gestión de inscripciones. Disponible solo para administradores.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza la página de inscripciones.
+  - `500 Internal Server Error`: Error al obtener los datos de inscripciones.
 
 ### Gestión de Descuentos
 
 #### `GET /admin/descuentos`
-- **Descripción**: Muestra la lista de descuentos.
-- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
-- **Respuesta**: Renderiza `descuentos.html` con la lista de descuentos.
-- **Errores**:
-  - `500 Internal Server Error`: Error al obtener descuentos de la base de datos.
 
----
+Renderiza la página de gestión de descuentos. Disponible solo para administradores.
 
-## Ejecución de la Aplicación
+- **Respuestas**:
+  - `200 OK`: Renderiza la página de descuentos.
+  - `500 Internal Server Error`: Error al obtener los datos de descuentos.
 
-Para ejecutar la aplicación, usa el siguiente comando:
+### Descarga de Datos
 
-```bash
-python app.py
+#### `GET /descargar_alumnos_csv`
+
+Descarga los datos de la tabla `alumnos` en formato CSV. Disponible solo para administradores.
+
+- **Respuestas**:
+  - `200 OK`: CSV descargado correctamente.
+  - `500 Internal Server Error`: Error al exportar los datos.
+
+## Seguridad
+
+La API utiliza autenticación basada en sesiones y proporciona decoradores para proteger las rutas según los roles de los usuarios (`admin`, `profesor`).
+
+## Variables de Entorno
+
+Asegúrate de que el archivo `.env` contenga las siguientes variables de entorno para la conexión a la base de datos:
+
+```plaintext
+DB_NAME=your_db_name
+DB_USER=your_db_user
+DB_PASSWORD=your_db_password
+DB_HOST=your_db_host
+DB_PORT=your_db_port
+
+
+## Endpoints
+
+### Inicio
+
+#### `GET /`
+
+Renderiza la página de inicio.
+
+### Autenticación
+
+#### `GET /login`
+
+Renderiza la página de inicio de sesión.
+
+#### `POST /login`
+
+Verifica las credenciales del usuario y, si son correctas, inicia una sesión y redirige al dashboard.
+
+- **Parámetros del cuerpo**:
+  - `username` (string): El nombre de usuario.
+  - `password` (string): La contraseña del usuario.
+
+- **Respuestas**:
+  - `200 OK`: Credenciales correctas, redirige al dashboard.
+  - `401 Unauthorized`: Credenciales incorrectas.
+
+#### `GET /logout`
+
+Cierra la sesión del usuario y redirige a la página de inicio.
+
+### Dashboard
+
+#### `GET /dashboard`
+
+Renderiza el dashboard con información de la escuela.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza la página del dashboard.
+  - `500 Internal Server Error`: Error al cargar el dashboard.
+
+### Gestión de Alumnos
+
+#### `GET /admin/alumnos`
+
+Renderiza la página de gestión de alumnos. Disponible para administradores y profesores.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza la página de alumnos.
+  - `500 Internal Server Error`: Error al obtener los datos de alumnos.
+
+### Gestión de Profesores
+
+#### `GET /admin/profesores`
+
+Renderiza la página de gestión de profesores. Disponible solo para administradores.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza la página de profesores.
+  - `500 Internal Server Error`: Error al obtener los datos de profesores.
+
+### Gestión de Clases
+
+#### `GET /admin/clases`
+
+Renderiza la página de gestión de clases. Disponible para administradores y profesores.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza la página de clases.
+  - `500 Internal Server Error`: Error al obtener los datos de clases.
+
+#### `GET /admin/clases/nueva`
+
+Renderiza el formulario para añadir una nueva clase. Disponible solo para administradores.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza el formulario de nueva clase.
+
+#### `POST /admin/clases/nueva`
+
+Añade una nueva clase a la base de datos. Disponible solo para administradores.
+
+- **Parámetros del cuerpo**:
+  - `nombre` (string): El nombre de la clase.
+  - `profesor_id` (int): El ID del profesor.
+  - `precio_base` (float): El precio base de la clase.
+  - `tipo_pack` (string): El tipo de pack de la clase.
+
+- **Respuestas**:
+  - `200 OK`: Clase añadida correctamente.
+  - `500 Internal Server Error`: Error al añadir la clase.
+
+#### `GET /admin/clases/<int:clase_id>/editar`
+
+Renderiza el formulario para editar una clase existente. Disponible solo para administradores.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza el formulario de edición de clase.
+
+#### `POST /admin/clases/<int:clase_id>/editar`
+
+Actualiza los datos de una clase existente en la base de datos. Disponible solo para administradores.
+
+- **Parámetros del cuerpo**:
+  - `nombre` (string): El nombre de la clase.
+  - `profesor_id` (int): El ID del profesor.
+  - `precio_base` (float): El precio base de la clase.
+  - `tipo_pack` (string): El tipo de pack de la clase.
+
+- **Respuestas**:
+  - `200 OK`: Clase actualizada correctamente.
+  - `500 Internal Server Error`: Error al actualizar la clase.
+
+#### `POST /admin/clases/<int:clase_id>/eliminar`
+
+Elimina una clase existente de la base de datos. Disponible solo para administradores.
+
+- **Respuestas**:
+  - `200 OK`: Clase eliminada correctamente.
+  - `500 Internal Server Error`: Error al eliminar la clase.
+
+### Gestión de Inscripciones
+
+#### `GET /admin/inscripciones`
+
+Renderiza la página de gestión de inscripciones. Disponible solo para administradores.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza la página de inscripciones.
+  - `500 Internal Server Error`: Error al obtener los datos de inscripciones.
+
+### Gestión de Descuentos
+
+#### `GET /admin/descuentos`
+
+Renderiza la página de gestión de descuentos. Disponible solo para administradores.
+
+- **Respuestas**:
+  - `200 OK`: Renderiza la página de descuentos.
+  - `500 Internal Server Error`: Error al obtener los datos de descuentos.
+
+### Descarga de Datos
+
+#### `GET /descargar_alumnos_csv`
+
+Descarga los datos de la tabla `alumnos` en formato CSV. Disponible solo para administradores.
+
+- **Respuestas**:
+  - `200 OK`: CSV descargado correctamente.
+  - `500 Internal Server Error`: Error al exportar los datos.
+
+## Seguridad
+
+La API utiliza autenticación basada en sesiones y proporciona decoradores para proteger las rutas según los roles de los usuarios (`admin`, `profesor`).
+
+## Variables de Entorno
+
+Asegúrate de que el archivo `.env` contenga las siguientes variables de entorno para la conexión a la base de datos:
+
+```plaintext
+DB_NAME=nombre_de_tu_base_de_datos
+DB_USER=usuario_de_tu_base_de_datos
+DB_PASSWORD=contraseña_de_tu_base_de_datos
+DB_HOST=host_de_tu_base_de_datos
+DB_PORT=puerto_de_tu_base_de_datos
+```
