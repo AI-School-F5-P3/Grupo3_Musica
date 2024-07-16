@@ -3,7 +3,6 @@ from functools import wraps
 import psycopg2
 import os
 from dotenv import load_dotenv
-from logs import log_info, log_warning, log_error
 
 # Cargar las variables de entorno desde un archivo .env
 load_dotenv()
@@ -27,7 +26,6 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if 'username' not in session:
-            log_warning('Intento de acceso sin usuario')
             return redirect(url_for('login'))
         return f(*args, **kwargs)
     return decorated_function
@@ -37,7 +35,6 @@ def admin_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if session.get('role') != 'admin':
-            log_warning('Intento de acceso a página de administrador sin permisos')
             return jsonify({'message': 'No tiene permiso para acceder a esta página'}), 403
         return f(*args, **kwargs)
     return decorated_function
@@ -47,14 +44,21 @@ def profesor_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if session.get('role') != 'profesor':
-            log_warning('Intento de acceso a página de profesor sin permisos')
+            return jsonify({'message': 'No tiene permiso para acceder a esta página'}), 403
+        return f(*args, **kwargs)
+    return decorated_function
+
+# Decorador para requerir rol de profesor o administrador
+def profesor_or_admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if session.get('role') not in ['admin', 'profesor']:
             return jsonify({'message': 'No tiene permiso para acceder a esta página'}), 403
         return f(*args, **kwargs)
     return decorated_function
 
 @app.route('/')
 def index():
-    log_info('Página principal cargada')
     return render_template('index.html')
 
 # Ruta para el inicio de sesión
@@ -71,9 +75,7 @@ def login():
         if user:
             session['username'] = username
             session['role'] = user[0]
-            log_info(f'Inicio de sesión exitoso: {username}')
             return redirect(url_for('dashboard'))
-        log_warning(f'Intento fallido de inicio de sesión para usuario: {username}')
         return jsonify({'message': 'Credenciales incorrectas'}), 401
     
     return render_template('login.html')
@@ -87,25 +89,21 @@ def dashboard():
         num_alumnos = 100
         num_clases = 20
         num_profesores = 7
-        log_info('Dashboard cargado correctamente')
         return render_template('dashboard.html', num_alumnos=num_alumnos, num_clases=num_clases, num_profesores=num_profesores)
     except Exception as e:
-        log_error(f'Error al cargar el dashboard: {str(e)}')
         return jsonify({'message': 'Error al cargar el dashboard', 'error': str(e)}), 500
 
 # Ruta para la gestión de alumnos
 @app.route('/admin/alumnos')
 @login_required
-@admin_required
+@profesor_or_admin_required
 def admin_alumnos():
     try:
         cursor.execute("SELECT * FROM alumnos")
         alumnos = cursor.fetchall()
-        log_info('Listado de alumnos obtenido correctamente')
         return render_template('alumnos.html', alumnos=alumnos)
     except Exception as e:
         conn.rollback()
-        log_error(f'Error al obtener alumnos: {str(e)}')
         return jsonify({'message': 'Error al obtener alumnos', 'error': str(e)}), 500
 
 # Ruta para la gestión de profesores
@@ -116,17 +114,15 @@ def admin_profesores():
     try:
         cursor.execute("SELECT * FROM profesores")
         profesores = cursor.fetchall()
-        log_info('Listado de profesores obtenido correctamente')
         return render_template('profesores.html', profesores=profesores)
     except Exception as e:
         conn.rollback()
-        log_error(f'Error al obtener profesores: {str(e)}')
         return jsonify({'message': 'Error al obtener profesores', 'error': str(e)}), 500
 
 # Ruta para la gestión de clases
 @app.route('/admin/clases')
 @login_required
-@admin_required
+@profesor_or_admin_required
 def admin_clases():
     try:
         cursor.execute("""
@@ -136,11 +132,9 @@ def admin_clases():
             LEFT JOIN niveles n ON c.id = n.clase_id
         """)
         clases = cursor.fetchall()
-        log_info('Listado de clases obtenido correctamente')
         return render_template('clases.html', clases=clases)
     except Exception as e:
         conn.rollback()
-        log_error(f'Error al obtener clases: {str(e)}')
         return jsonify({'message': 'Error al obtener clases', 'error': str(e)}), 500
 
 # Ruta para añadir una nueva clase
@@ -163,7 +157,6 @@ def nueva_clase():
             return redirect(url_for('admin_clases'))
         except Exception as e:
             conn.rollback()
-            log_info(f'Nueva clase añadida: {nombre}')
             return jsonify({'message': 'Error al añadir clase', 'error': str(e)}), 500
     
     # Obtener lista de profesores para el formulario
@@ -189,11 +182,9 @@ def editar_clase(clase_id):
                 WHERE id = %s
             """, (nombre, profesor_id, precio_base, tipo_pack, clase_id))
             conn.commit()
-            log_info(f'Clase editada correctamente: ID {clase_id}')
             return redirect(url_for('admin_clases'))
         except Exception as e:
             conn.rollback()
-            log_error(f'Error al editar clase: {str(e)}')
             return jsonify({'message': 'Error al editar clase', 'error': str(e)}), 500
 
     # Obtener la información de la clase y lista de profesores para el formulario
@@ -213,11 +204,9 @@ def eliminar_clase(clase_id):
     try:
         cursor.execute("DELETE FROM clases WHERE id = %s", (clase_id,))
         conn.commit()
-        log_info(f'Clase eliminada correctamente: ID {clase_id}')
         return redirect(url_for('admin_clases'))
     except Exception as e:
         conn.rollback()
-        log_error(f'Error al eliminar clase: {str(e)}')
         return jsonify({'message': 'Error al eliminar clase', 'error': str(e)}), 500
 
 # Ruta para la gestión de inscripciones
@@ -234,11 +223,9 @@ def admin_inscripciones():
             LEFT JOIN niveles n ON i.nivel_id = n.id
         """)
         inscripciones = cursor.fetchall()
-        log_info('Listado de inscripciones obtenido correctamente')
         return render_template('inscripciones.html', inscripciones=inscripciones)
     except Exception as e:
         conn.rollback()
-        log_error(f'Error al obtener inscripciones: {str(e)}')
         return jsonify({'message': 'Error al obtener inscripciones', 'error': str(e)}), 500
 
 # Ruta para la gestión de descuentos
@@ -249,20 +236,10 @@ def admin_descuentos():
     try:
         cursor.execute("SELECT * FROM precios")
         descuentos = cursor.fetchall()
-        log_info('Listado de descuentos obtenido correctamente')
         return render_template('descuentos.html', descuentos=descuentos)
     except Exception as e:
         conn.rollback()
-        log_error(f'Error al obtener descuentos: {str(e)}')
         return jsonify({'message': 'Error al obtener descuentos', 'error': str(e)}), 500
-    
-# Ruta para logout
-@app.route('/logout')
-@login_required
-def logout():
-    session.pop('username', None)
-    session.pop('role', None)
-    return redirect(url_for('index'))
 
 # Ejecutar la aplicación Flask
 if __name__ == '__main__':

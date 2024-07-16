@@ -17,21 +17,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/dashboard">Dashboard</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/alumnos">Gestión de Alumnos</a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/alumnos">Gestión de Alumnos</a>
+            </li>
+            {% if session.get('role') == 'admin' %}
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/profesores">Gestión de Profesores</a>
                 </li>
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/clases">Gestión de Clases</a>
                 </li>
+                {% if session.get('role') == 'admin' %}
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/inscripciones">Gestión de Inscripciones</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/descuentos">Gestión de Descuentos</a>
                 </li>
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Salir</a>
                 </li>

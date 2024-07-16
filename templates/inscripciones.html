@@ -2,7 +2,9 @@
 
 {% block content %}
 <h1 class="mb-4">Gestión de Inscripciones</h1>
+{% if session.get('role') == 'admin' %}
 <a href="/admin/inscripciones/nueva" class="btn btn-primary mb-3">Añadir Nueva Inscripción</a>
+{% endif %}
 <table class="table table-striped">
     <thead class="thead-dark">
         <tr>
@@ -10,7 +12,9 @@
             <th>Alumno</th>
             <th>Clase</th>
             <th>Nivel</th>
+            {% if session.get('role') == 'admin' %}
             <th>Acciones</th>
+            {% endif %}
         </tr>
     </thead>
     <tbody>
@@ -20,10 +24,12 @@
             <td>{{ inscripcion[1] }}</td>
             <td>{{ inscripcion[2] }}</td>
             <td>{{ inscripcion[3] }}</td>
+            {% if session['role'] == 'admin' %}
             <td>
                 <a href="/admin/inscripciones/{{ inscripcion[0] }}/editar" class="btn btn-secondary btn-sm">Editar</a>
                 <a href="/admin/inscripciones/{{ inscripcion[0] }}/eliminar" class="btn btn-danger btn-sm">Eliminar</a>
             </td>
+            {% endif %}
         </tr>
         {% endfor %}
     </tbody>

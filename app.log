@@ -260,3 +260,369 @@ LINE 2:             INSERT INTO logs (timestamp, level, message)
 2024-07-16 11:17:03,635 INFO:  * Restarting with watchdog (windowsapi) [in C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\werkzeug\_internal.py:97]
 2024-07-16 11:17:54,318 INFO:  * Restarting with watchdog (windowsapi) [in C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\werkzeug\_internal.py:97]
 2024-07-16 11:17:55,876 INFO:  * Restarting with watchdog (windowsapi) [in C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:15:45,454 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000 [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:15:45,454 INFO: [33mPress CTRL+C to quit[0m [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:15:45,458 INFO:  * Restarting with stat [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:15:45,842 WARNING:  * Debugger is active! [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:15:45,848 INFO:  * Debugger PIN: 733-530-386 [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:15:57,920 INFO: Página principal cargada [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:15:57,943 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:15:57,949 INFO: 127.0.0.1 - - [16/Jul/2024 12:15:57] "GET / HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:15:58,121 INFO: 127.0.0.1 - - [16/Jul/2024 12:15:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:15:58,122 INFO: 127.0.0.1 - - [16/Jul/2024 12:15:58] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:00,414 INFO: Página principal cargada [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:16:00,416 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:16:00,429 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:00] "GET / HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:00,450 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:00,451 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:00] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:01,991 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:01] "GET /login HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:02,012 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:24,628 INFO: Inicio de sesión exitoso: armoniaadmin [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:16:24,630 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:16:24,633 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:24] "[32mPOST /login HTTP/1.1[0m" 302 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:24,638 INFO: Dashboard cargado correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:16:24,640 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:16:24,647 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:24] "GET /dashboard HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:24,675 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:26,602 INFO: Dashboard cargado correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:16:26,603 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:16:26,606 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:26] "GET /dashboard HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:26,619 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:26] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:27,756 INFO: Listado de alumnos obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:16:27,757 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:16:27,764 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:27] "GET /admin/alumnos HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:27,786 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:30,578 INFO: Listado de profesores obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:16:30,580 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:16:30,586 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:30] "GET /admin/profesores HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:30,605 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:32,186 INFO: Listado de clases obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:16:32,187 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:16:32,197 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:32] "GET /admin/clases HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:32,219 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:32] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:33,069 INFO: Listado de inscripciones obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:16:33,070 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:16:33,080 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:33] "GET /admin/inscripciones HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:33,104 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:33] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:36,138 INFO: Listado de clases obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:16:36,139 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:16:36,141 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:36] "GET /admin/clases HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:36,159 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:36] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:37,183 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:37] "GET /admin/clases/nueva HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:37,201 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:46,421 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:46] "[32mPOST /admin/clases/nueva HTTP/1.1[0m" 302 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:46,425 INFO: Listado de clases obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:16:46,426 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:16:46,428 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:46] "GET /admin/clases HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:46,452 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:50,922 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:50] "GET /admin/clases/18/editar HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:50,947 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:57,797 INFO: Clase editada correctamente: ID 18 [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:16:57,798 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:16:57,799 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:57] "[32mPOST /admin/clases/18/editar HTTP/1.1[0m" 302 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:57,805 INFO: Listado de clases obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:16:57,807 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:16:57,809 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:57] "GET /admin/clases HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:16:57,836 INFO: 127.0.0.1 - - [16/Jul/2024 12:16:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:17:11,519 INFO: 127.0.0.1 - - [16/Jul/2024 12:17:11] "GET /admin/clases/18/editar HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:17:11,539 INFO: 127.0.0.1 - - [16/Jul/2024 12:17:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:17:15,937 INFO: Clase editada correctamente: ID 18 [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:17:15,938 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:17:15,939 INFO: 127.0.0.1 - - [16/Jul/2024 12:17:15] "[32mPOST /admin/clases/18/editar HTTP/1.1[0m" 302 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:17:15,945 INFO: Listado de clases obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:17:15,946 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:17:15,948 INFO: 127.0.0.1 - - [16/Jul/2024 12:17:15] "GET /admin/clases HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:17:15,978 INFO: 127.0.0.1 - - [16/Jul/2024 12:17:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:17:26,854 INFO: Clase eliminada correctamente: ID 18 [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:17:26,856 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:17:26,857 INFO: 127.0.0.1 - - [16/Jul/2024 12:17:26] "[32mPOST /admin/clases/18/eliminar HTTP/1.1[0m" 302 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:17:26,861 INFO: Listado de clases obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:17:26,864 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:17:26,865 INFO: 127.0.0.1 - - [16/Jul/2024 12:17:26] "GET /admin/clases HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:17:26,890 INFO: 127.0.0.1 - - [16/Jul/2024 12:17:26] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:17:29,934 INFO: Dashboard cargado correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:17:29,935 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:17:29,936 INFO: 127.0.0.1 - - [16/Jul/2024 12:17:29] "GET /dashboard HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:17:29,958 INFO: 127.0.0.1 - - [16/Jul/2024 12:17:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:49,714 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000 [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:49,715 INFO: [33mPress CTRL+C to quit[0m [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:49,719 INFO:  * Restarting with stat [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:50,062 WARNING:  * Debugger is active! [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:50,066 INFO:  * Debugger PIN: 733-530-386 [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:54,932 INFO: Dashboard cargado correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:26:54,936 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:26:54,941 INFO: 127.0.0.1 - - [16/Jul/2024 12:26:54] "GET /dashboard HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:55,007 INFO: 127.0.0.1 - - [16/Jul/2024 12:26:55] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:56,778 INFO: Listado de profesores obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:26:56,779 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:26:56,782 INFO: 127.0.0.1 - - [16/Jul/2024 12:26:56] "GET /admin/profesores HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:56,817 INFO: 127.0.0.1 - - [16/Jul/2024 12:26:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:57,527 INFO: Listado de clases obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:26:57,529 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:26:57,533 INFO: 127.0.0.1 - - [16/Jul/2024 12:26:57] "GET /admin/clases HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:57,555 INFO: 127.0.0.1 - - [16/Jul/2024 12:26:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:58,007 INFO: Listado de inscripciones obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:26:58,008 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:26:58,014 INFO: 127.0.0.1 - - [16/Jul/2024 12:26:58] "GET /admin/inscripciones HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:58,037 INFO: 127.0.0.1 - - [16/Jul/2024 12:26:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:59,029 INFO: Listado de profesores obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:26:59,031 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:26:59,037 INFO: 127.0.0.1 - - [16/Jul/2024 12:26:59] "GET /admin/profesores HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:59,055 INFO: 127.0.0.1 - - [16/Jul/2024 12:26:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:59,574 INFO: Listado de alumnos obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:26:59,575 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:26:59,583 INFO: 127.0.0.1 - - [16/Jul/2024 12:26:59] "GET /admin/alumnos HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:26:59,616 INFO: 127.0.0.1 - - [16/Jul/2024 12:26:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:29:11,088 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000 [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:29:11,088 INFO: [33mPress CTRL+C to quit[0m [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:29:11,091 INFO:  * Restarting with stat [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:29:11,436 WARNING:  * Debugger is active! [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:29:11,439 INFO:  * Debugger PIN: 733-530-386 [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:29:23,219 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000 [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:29:23,219 INFO: [33mPress CTRL+C to quit[0m [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:29:23,222 INFO:  * Restarting with stat [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:29:23,557 WARNING:  * Debugger is active! [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:29:23,560 INFO:  * Debugger PIN: 733-530-386 [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:29:41,795 INFO: Dashboard cargado correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:29:41,799 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:29:41,810 INFO: 127.0.0.1 - - [16/Jul/2024 12:29:41] "GET /dashboard HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:29:41,922 INFO: 127.0.0.1 - - [16/Jul/2024 12:29:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:29:43,682 INFO: Listado de profesores obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 12:29:43,684 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 12:29:43,690 INFO: 127.0.0.1 - - [16/Jul/2024 12:29:43] "GET /admin/profesores HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 12:29:43,715 INFO: 127.0.0.1 - - [16/Jul/2024 12:29:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:04:56,698 INFO: Listado de inscripciones obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 13:04:56,703 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:04:56,716 INFO: 127.0.0.1 - - [16/Jul/2024 13:04:56] "GET /admin/inscripciones HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:04:56,751 INFO: 127.0.0.1 - - [16/Jul/2024 13:04:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:04:58,123 INFO: Listado de clases obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 13:04:58,125 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:04:58,133 INFO: 127.0.0.1 - - [16/Jul/2024 13:04:58] "GET /admin/clases HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:04:58,156 INFO: 127.0.0.1 - - [16/Jul/2024 13:04:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:08,237 INFO: Dashboard cargado correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 13:06:08,238 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:06:08,240 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:08] "GET /dashboard HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:08,259 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:09,384 INFO: Listado de alumnos obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 13:06:09,385 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:06:09,394 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:09] "GET /admin/alumnos HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:09,415 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:10,343 INFO: Listado de profesores obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 13:06:10,345 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:06:10,349 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:10] "GET /admin/profesores HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:10,369 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:11,310 INFO: Listado de clases obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 13:06:11,311 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:06:11,314 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:11] "GET /admin/clases HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:11,334 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:12,383 INFO: Listado de inscripciones obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 13:06:12,385 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:06:12,388 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:12] "GET /admin/inscripciones HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:12,408 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:12] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:13,165 INFO: Listado de descuentos obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 13:06:13,166 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:06:13,175 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:13] "GET /admin/descuentos HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:13,193 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:14,869 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:14] "[32mGET /logout HTTP/1.1[0m" 302 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:14,875 INFO: Página principal cargada [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 13:06:14,876 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:06:14,881 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:14] "GET / HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:14,902 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:14] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:06:14,906 INFO: 127.0.0.1 - - [16/Jul/2024 13:06:14] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:10:21,281 INFO: 127.0.0.1 - - [16/Jul/2024 13:10:21] "GET /login HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:10:21,305 INFO: 127.0.0.1 - - [16/Jul/2024 13:10:21] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:11:10,762 WARNING: Intento fallido de inicio de sesión para usuario: Marprofesor [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:60]
+2024-07-16 13:11:10,763 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:11:10,764 INFO: 127.0.0.1 - - [16/Jul/2024 13:11:10] "[31m[1mPOST /login HTTP/1.1[0m" 401 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:11:36,309 INFO: Inicio de sesión exitoso: Marprofesor [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 13:11:36,310 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:11:36,312 INFO: 127.0.0.1 - - [16/Jul/2024 13:11:36] "[32mPOST /login HTTP/1.1[0m" 302 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:11:36,318 INFO: Dashboard cargado correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 13:11:36,319 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:11:36,320 INFO: 127.0.0.1 - - [16/Jul/2024 13:11:36] "GET /dashboard HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:11:36,347 INFO: 127.0.0.1 - - [16/Jul/2024 13:11:36] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:13:50,043 INFO: Inicio de sesión exitoso: Marprofesor [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 13:13:50,045 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:13:50,046 INFO: 127.0.0.1 - - [16/Jul/2024 13:13:50] "[32mPOST /login HTTP/1.1[0m" 302 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:13:50,049 INFO: Dashboard cargado correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 13:13:50,050 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:13:50,053 INFO: 127.0.0.1 - - [16/Jul/2024 13:13:50] "GET /dashboard HTTP/1.1" 200 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:13:50,078 INFO: 127.0.0.1 - - [16/Jul/2024 13:13:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:13:52,848 WARNING: Intento de acceso a página de administrador sin permisos [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:60]
+2024-07-16 13:13:52,851 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:13:52,853 INFO: 127.0.0.1 - - [16/Jul/2024 13:13:52] "[31m[1mGET /admin/clases HTTP/1.1[0m" 403 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:15:28,153 WARNING: Intento de acceso a página de administrador sin permisos [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:60]
+2024-07-16 13:15:28,155 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:15:28,156 INFO: 127.0.0.1 - - [16/Jul/2024 13:15:28] "[31m[1mGET /admin/alumnos HTTP/1.1[0m" 403 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:15:42,707 WARNING: Intento de acceso a página de administrador sin permisos [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:60]
+2024-07-16 13:15:42,709 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:15:42,710 INFO: 127.0.0.1 - - [16/Jul/2024 13:15:42] "[31m[1mGET /admin/profesores HTTP/1.1[0m" 403 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 13:16:40,418 WARNING: Intento de acceso a página de administrador sin permisos [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:60]
+2024-07-16 13:16:40,419 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 13:16:40,419 INFO: 127.0.0.1 - - [16/Jul/2024 13:16:40] "[31m[1mGET /admin/profesores HTTP/1.1[0m" 403 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 17:57:12,984 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000 [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 17:57:12,985 INFO: [33mPress CTRL+C to quit[0m [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 17:57:12,989 INFO:  * Restarting with stat [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 17:57:13,374 WARNING:  * Debugger is active! [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 17:57:13,378 INFO:  * Debugger PIN: 733-530-386 [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 17:57:15,443 INFO: Listado de alumnos obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 17:57:15,462 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 17:57:15,471 ERROR: Error al obtener alumnos: 'alumno' is undefined [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:64]
+2024-07-16 17:57:15,472 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 17:57:15,473 INFO: 127.0.0.1 - - [16/Jul/2024 17:57:15] "[35m[1mGET /admin/alumnos HTTP/1.1[0m" 500 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 17:57:17,944 INFO: Listado de alumnos obtenido correctamente [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:56]
+2024-07-16 17:57:17,946 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 17:57:17,948 ERROR: Error al obtener alumnos: 'alumno' is undefined [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:64]
+2024-07-16 17:57:17,949 ERROR: Error al guardar log en la base de datos: no existe la relación «logs»
+LINE 2:             INSERT INTO logs (timestamp, level, message)
+                                ^
+ [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\logs.py:49]
+2024-07-16 17:57:17,950 INFO: 127.0.0.1 - - [16/Jul/2024 17:57:17] "[35m[1mGET /admin/alumnos HTTP/1.1[0m" 500 - [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 17:58:08,988 INFO:  * Detected change in 'C:\\Users\\ibane\\Desktop\\proyectosiafactoria\\Grupo3_Musica\\app.py', reloading [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
+2024-07-16 17:58:09,021 INFO:  * Restarting with stat [in C:\Users\ibane\Desktop\proyectosiafactoria\Grupo3_Musica\venv\Lib\site-packages\werkzeug\_internal.py:97]
