@@ -1,3 +1,11 @@
+-- Creación de tabla para logs
+CREATE TABLE logs (
+    id SERIAL PRIMARY KEY,
+    timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    level VARCHAR(10) NOT NULL,
+    message TEXT
+);
+
 -- Habilitar la extensión pgcrypto
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
