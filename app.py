@@ -199,4 +199,4 @@ def eliminar_clase(clase_id):
         return redirect(url_for('admin_clases'))
     except Exception as e:
         conn.rollback()
-        return jsonify({'message': 'Error al eliminar clase', '
+        return jsonify({'message': 'Error al eliminar clase', 'error': str(e)}), 500
