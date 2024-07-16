@@ -3,7 +3,7 @@ from functools import wraps
 import psycopg2
 import os
 from dotenv import load_dotenv
-from utils import calcular_precio  # Importar la función de utils.py
+from utils import calcular_precio
 
 # Cargar las variables de entorno desde un archivo .env
 load_dotenv()
@@ -199,95 +199,4 @@ def eliminar_clase(clase_id):
         return redirect(url_for('admin_clases'))
     except Exception as e:
         conn.rollback()
-        return jsonify({'message': 'Error al eliminar clase', 'error': str(e)}), 500
-
-# Ruta para la gestión de inscripciones
-@app.route('/admin/inscripciones')
-@login_required
-@admin_required
-def admin_inscripciones():
-    try:
-        cursor.execute("""
-            SELECT i.id, a.nombre || ' ' || a.apellidos AS alumno, c.nombre AS clase, n.nivel
-            FROM alumnos_clases i
-            JOIN alumnos a ON i.alumno_id = a.id
-            JOIN clases c ON i.clase_id = c.id
-            LEFT JOIN niveles n ON i.nivel_id = n.id
-        """)
-        inscripciones = cursor.fetchall()
-        return render_template('inscripciones.html', inscripciones=inscripciones)
-    except Exception as e:
-        conn.rollback()
-        return jsonify({'message': 'Error al obtener inscripciones', 'error': str(e)}), 500
-
-# Ruta para añadir una nueva inscripción
-@app.route('/admin/inscripciones/nueva', methods=['GET', 'POST'])
-@login_required
-@admin_required
-def nueva_inscripcion():
-    if request.method == 'POST':
-        alumno_id = request.form['alumno_id']
-        clase_id = request.form['clase_id']
-        nivel_id = request.form['nivel_id']
-        precio = request.form['precio']
-        
-        try:
-            cursor.execute("""
-                INSERT INTO alumnos_clases (alumno_id, clase_id, nivel_id)
-                VALUES (%s, %s, %s)
-            """, (alumno_id, clase_id, nivel_id))
-            conn.commit()
-            return redirect(url_for('admin_inscripciones'))
-        except Exception as e:
-            conn.rollback()
-            return jsonify({'message': 'Error al añadir inscripción', 'error': str(e)}), 500
-
-    # Obtener lista de alumnos, clases y niveles para el formulario
-    cursor.execute("SELECT id, nombre || ' ' || apellidos AS nombre FROM alumnos")
-    alumnos = cursor.fetchall()
-
-    cursor.execute("SELECT id, nombre FROM clases")
-    clases = cursor.fetchall()
-
-    cursor.execute("SELECT id, nivel FROM niveles")
-    niveles = cursor.fetchall()
-
-    return render_template('nueva_inscripcion.html', alumnos=alumnos, clases=clases, niveles=niveles)
-
-# Ruta para calcular el precio
-@app.route('/calcular_precio', methods=['POST'])
-@login_required
-def calcular_precio_route():
-    try:
-        data = request.get_json()
-        alumno_id = data.get('alumno_id')
-        clase_id = data.get('clase_id')
-
-        # Obtener información de la clase
-        cursor.execute("SELECT precio_base FROM clases WHERE id = %s", (clase_id,))
-        clase = cursor.fetchone()
-        clases = [{'precio_base': clase[0]}]
-
-        # Calcular precio con descuentos
-        total_precio = calcular_precio(cursor, alumno_id, clases)
-        
-        return jsonify({'precio': total_precio})
-    except Exception as e:
-        return jsonify({'message': 'Error al calcular precio', 'error': str(e)}), 500
-
-# Ruta para la gestión de descuentos
-@app.route('/admin/descuentos')
-@login_required
-@admin_required
-def admin_descuentos():
-    try:
-        cursor.execute("SELECT * FROM precios")
-        descuentos = cursor.fetchall()
-        return render_template('descuentos.html', descuentos=descuentos)
-    except Exception as e:
-        conn.rollback()
-        return jsonify({'message': 'Error al obtener descuentos', 'error': str(e)}), 500
-
-# Ejecutar la aplicación Flask
-if __name__ == '__main__':
-    app.run(debug=True)
+        return jsonify({'message': 'Error al eliminar clase', '
