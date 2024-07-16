@@ -130,3 +130,14 @@
   - `500 Internal Server Error`: Error al obtener inscripciones de la base de datos.
 
 ---
+
+### Gestión de Descuentos
+
+#### `GET /admin/descuentos`
+- **Descripción**: Muestra la lista de descuentos.
+- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
+- **Respuesta**: Renderiza `descuentos.html` con la lista de descuentos.
+- **Errores**:
+  - `500 Internal Server Error`: Error al obtener descuentos de la base de datos.
+
+---
