@@ -1,6 +1,3 @@
-import psycopg2
-
-# Función para calcular el precio y aplicar descuentos
 def calcular_precio(cursor, alumno_id, clases):
     cursor.execute("SELECT COUNT(*) FROM alumnos WHERE familiar_id = %s", (alumno_id,))
     num_familiares = cursor.fetchone()[0]
