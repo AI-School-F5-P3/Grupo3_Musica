@@ -56,3 +56,23 @@
   - `500 Internal Server Error`: Error al obtener alumnos de la base de datos.
 
 ---
+
+### Gestión de Profesores
+
+#### `GET /admin/profesores`
+- **Descripción**: Muestra la lista de profesores.
+- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
+- **Respuesta**: Renderiza `profesores.html` con la lista de profesores.
+- **Errores**:
+  - `500 Internal Server Error`: Error al obtener profesores de la base de datos.
+
+---
+
+### Gestión de Clases
+
+#### `GET /admin/clases`
+- **Descripción**: Muestra la lista de clases.
+- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
+- **Respuesta**: Renderiza `clases.html` con la lista de clases.
+- **Errores**:
+  - `500 Internal Server Error`: Error al obtener clases de la base de datos.
