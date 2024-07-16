@@ -12,10 +12,35 @@ body {
     margin-bottom: 20px;
 }
 
+/* Centrar el menú de navegación */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Estilos para los enlaces del menú de navegación */
+.navbar-nav a {
+    color: #007bff; /* Cambia el color de los enlaces */
+    font-weight: bold; /* Hace la fuente más gruesa */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    padding: 10px 15px; /* Añade un poco de espacio alrededor de los enlaces */
+    transition: color 0.3s; /* Suaviza el cambio de color */
+}
+
+.navbar-nav a:hover {
+    color: #0056b3; /* Cambia el color de los enlaces al pasar el ratón */
+}
 
 /* Cards */
 .card {
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efecto de sombra */
+    transition: box-shadow 0.3s; /* Suaviza la transición de la sombra */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Efecto de sombra más pronunciado al pasar el ratón */
 }
 
 /* Tables */
