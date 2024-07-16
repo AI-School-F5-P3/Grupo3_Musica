@@ -255,6 +255,14 @@ def admin_descuentos():
         conn.rollback()
         log_error(f'Error al obtener descuentos: {str(e)}')
         return jsonify({'message': 'Error al obtener descuentos', 'error': str(e)}), 500
+    
+# Ruta para logout
+@app.route('/logout')
+@login_required
+def logout():
+    session.pop('username', None)
+    session.pop('role', None)
+    return redirect(url_for('index'))
 
 # Ejecutar la aplicación Flask
 if __name__ == '__main__':
