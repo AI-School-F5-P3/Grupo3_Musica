@@ -43,6 +43,26 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Efecto de sombra más pronunciado al pasar el ratón */
 }
 
+.students-button-container {
+    display: flex;
+    justify-content: space-between; /* Alinea un elemento a la izquierda y el otro a la derecha */
+    align-items: center; /* Opcional: Alinea los elementos verticalmente al centro */
+}
+
+.students-button-container a {
+    margin: 0 0 10px !important; /* Elimina el margen por defecto de los enlaces */
+    display: inline-block; /* Hace que los enlaces se comporten como elementos en línea pero permitiendo dimensionamiento */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Elimina el subrayado */
+    transition: background-color 0.3s; /* Efecto suave al cambiar el color de fondo */
+}
+
+.students-button-container a:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón */
+}
+
 /* Tables */
 .table {
     background-color: #fff;
