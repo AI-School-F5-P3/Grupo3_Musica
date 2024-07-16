@@ -3,7 +3,7 @@ from functools import wraps
 import psycopg2
 import os
 from dotenv import load_dotenv
-from utils import calcular_precio
+from utils import aplicar_descuento_familiar
 
 # Cargar las variables de entorno desde un archivo .env
 load_dotenv()
@@ -200,3 +200,9 @@ def eliminar_clase(clase_id):
     except Exception as e:
         conn.rollback()
         return jsonify({'message': 'Error al eliminar clase', 'error': str(e)}), 500
+    
+# Ruta para la gestión de cuotas y descuentos
+@app.route('/admin/cuotas')
+@login_required
+@admin_required
+def admin_cuotas():
