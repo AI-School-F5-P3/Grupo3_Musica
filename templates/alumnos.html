@@ -44,6 +44,9 @@
     </nav>
     <div class="container mt-4">
         <h1>Gestión de Alumnos</h1>
+        <!-- Botón para descargar CSV -->
+        <a href="{{ url_for('descargar_alumnos_csv') }}" class="btn btn-success mb-3">Descargar Alumnos CSV</a>
+        <!-- Tabla de alumnos -->
         <table class="table table-striped">
             <thead>
                 <tr>

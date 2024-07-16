@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Descargar Alumnos</h1>
+<a href="{{ url_for('descargar_alumnos_csv') }}" class="btn btn-primary mb-3">Descargar Alumnos en CSV</a>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Edad</th>
+            <th>Familiar ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for alumno in alumnos %}
+        <tr>
+            <td>{{ alumno[0] }}</td>
+            <td>{{ alumno[1] }}</td>
+            <td>{{ alumno[2] }}</td>
+            <td>{{ alumno[3] }}</td>
+            <td>{{ alumno[4] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
