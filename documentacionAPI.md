@@ -119,3 +119,14 @@
   - `500 Internal Server Error`: Error al eliminar clase de la base de datos.
 
 ---
+
+### Gestión de Inscripciones
+
+#### `GET /admin/inscripciones`
+- **Descripción**: Muestra la lista de inscripciones.
+- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
+- **Respuesta**: Renderiza `inscripciones.html` con la lista de inscripciones.
+- **Errores**:
+  - `500 Internal Server Error`: Error al obtener inscripciones de la base de datos.
+
+---
