@@ -36,3 +36,12 @@
   - `401 Unauthorized`: Devuelve un mensaje de error si las credenciales son incorrectas.
 
 ---
+
+### Dashboard
+
+#### `GET /dashboard`
+- **Descripción**: Muestra el panel de control.
+- **Autenticación**: Requiere que el usuario esté autenticado.
+- **Respuesta**: Renderiza `dashboard.html` con datos de ejemplo.
+
+---
