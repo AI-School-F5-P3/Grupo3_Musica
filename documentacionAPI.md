@@ -45,3 +45,14 @@
 - **Respuesta**: Renderiza `dashboard.html` con datos de ejemplo.
 
 ---
+
+### Gestión de Alumnos
+
+#### `GET /admin/alumnos`
+- **Descripción**: Muestra la lista de alumnos.
+- **Autenticación**: Requiere que el usuario tenga el rol de administrador.
+- **Respuesta**: Renderiza `alumnos.html` con la lista de alumnos.
+- **Errores**:
+  - `500 Internal Server Error`: Error al obtener alumnos de la base de datos.
+
+---
