@@ -247,7 +247,7 @@ def admin_descuentos():
 # Ruta para descargar la tabla alumnos_clases en CSV
 @app.route('/descargar_alumnos_csv')
 @login_required
-@profesor_or_admin_required
+@admin_required
 def descargar_alumnos_csv():
     try:
         # Conexión a la base de datos
