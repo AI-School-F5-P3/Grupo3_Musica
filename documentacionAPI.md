@@ -141,3 +141,10 @@
   - `500 Internal Server Error`: Error al obtener descuentos de la base de datos.
 
 ---
+
+## Ejecución de la Aplicación
+
+Para ejecutar la aplicación, usa el siguiente comando:
+
+```bash
+python app.py
