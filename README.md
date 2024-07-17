@@ -1,4 +1,4 @@
-# Proyecto de Escuela de Música Armonía (dev)
+# Proyecto de Escuela de Música Armonía
 
 ## Roles
 
