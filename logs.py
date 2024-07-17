@@ -1,6 +1,6 @@
-import logging
-import psycopg2
-import os
+import logging # Módulo estándar de Python para registrar eventos.
+import psycopg2 # Librería para interactuar con bases de datos PostgreSQL.
+import os # Módulo para interactuar con el sistema operativo.
 from dotenv import load_dotenv
 from datetime import datetime
 

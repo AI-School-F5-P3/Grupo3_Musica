@@ -298,6 +298,7 @@ def descargar_alumnos_csv():
     finally:
         if conn:
             conn.close()
+            log_info('Conexión a la base de datos cerrada después de exportar datos')
 
     
 # Ruta para logout
@@ -306,8 +307,10 @@ def descargar_alumnos_csv():
 def logout():
     session.pop('username', None)
     session.pop('role', None)
+    log_info(f'Usuario {username} ha cerrado sesión')
     return redirect(url_for('index'))
 
 # Ejecutar la aplicación Flask
 if __name__ == '__main__':
+    log_info('La aplicación Flask está comenzando')
     app.run(debug=True)
