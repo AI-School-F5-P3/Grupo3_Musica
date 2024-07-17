@@ -2,13 +2,19 @@
 
 {% block content %}
 <h1 class="mb-4">Gestión de Profesores</h1>
-<a href="/admin/profesores/nuevo" class="btn btn-primary mb-3">Añadir Nuevo Profesor</a>
+{% if session['role'] == 'admin' %}
+<a href="/profesores/nuevo" class="btn btn-primary mb-3">Añadir Nuevo Profesor
+</a>
+{% endif %}
+
 <table class="table table-striped">
     <thead class="thead-dark">
         <tr>
             <th>ID</th>
             <th>Nombre</th>
+            {% if session.get('role') == 'admin' %}
             <th>Acciones</th>
+            {% endif %}
         </tr>
     </thead>
     <tbody>
@@ -16,10 +22,12 @@
         <tr>
             <td>{{ profesor[0] }}</td>
             <td>{{ profesor[1] }}</td>
+            {% if session['role'] == 'admin' %}
             <td>
-                <a href="/admin/profesores/{{ profesor[0] }}/editar" class="btn btn-secondary btn-sm">Editar</a>
-                <a href="/admin/profesores/{{ profesor[0] }}/eliminar" class="btn btn-danger btn-sm">Eliminar</a>
+                <a href="/profesores/{{ profesor[0] }}/editar" class="btn btn-secondary btn-sm">Editar</a>
+                <a href="/profesores/{{ profesor[0] }}/eliminar" class="btn btn-danger btn-sm">Eliminar</a>
             </td>
+            {% endif %}
         </tr>
         {% endfor %}
     </tbody>

@@ -81,6 +81,12 @@ USING (
     END
 );
 
+CREATE OR REPLACE FUNCTION get_current_alumno_id() RETURNS INT AS $$
+BEGIN
+    RETURN (SELECT id FROM alumnos WHERE login = current_user);
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
 ALTER TABLE datos_sensibles ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY alumno_policy ON datos_sensibles
@@ -145,11 +151,7 @@ WHERE current_user ~ '^alumno\d+$' AND
                     ELSE (substring(current_user from 'alumno(\d+)'))::INT
                   END;
 
-CREATE OR REPLACE FUNCTION get_current_alumno_id() RETURNS INT AS $$
-BEGIN
-    RETURN (SELECT id FROM alumnos WHERE login = current_user);
-END;
-$$ LANGUAGE plpgsql SECURITY DEFINER;
+
 
 CREATE OR REPLACE VIEW mis_datos AS
 SELECT 
