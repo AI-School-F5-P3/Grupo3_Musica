@@ -1,4 +1,4 @@
-# Proyecto de Escuela de Música Armonía 
+# Proyecto de Escuela de Música Armonía (dev)
 
 ## Roles
 
@@ -14,7 +14,7 @@
 - PostgreSQL
 - DBDiagram
 - Github
+- Flask
 - Trello
 - Notion
-- Flask
 - tbc...

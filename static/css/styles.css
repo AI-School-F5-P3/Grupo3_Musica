@@ -1,0 +1,148 @@
+/* styles.css */
+
+/* General */
+body {
+    background-color: #f8f9fa;
+    color: #343a40;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Centrar el menú de navegación */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Estilos para los enlaces del menú de navegación */
+.navbar-nav a {
+    color: #007bff; /* Cambia el color de los enlaces */
+    font-weight: bold; /* Hace la fuente más gruesa */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    padding: 10px 15px; /* Añade un poco de espacio alrededor de los enlaces */
+    transition: color 0.3s; /* Suaviza el cambio de color */
+}
+
+.navbar-nav a:hover {
+    color: #0056b3; /* Cambia el color de los enlaces al pasar el ratón */
+}
+
+/* Cards */
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efecto de sombra */
+    transition: box-shadow 0.3s; /* Suaviza la transición de la sombra */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Efecto de sombra más pronunciado al pasar el ratón */
+}
+
+.students-button-container {
+    display: flex;
+    justify-content: space-between; /* Alinea un elemento a la izquierda y el otro a la derecha */
+    align-items: center; /* Opcional: Alinea los elementos verticalmente al centro */
+}
+
+.students-button-container a {
+    margin: 0 0 10px !important; /* Elimina el margen por defecto de los enlaces */
+    display: inline-block; /* Hace que los enlaces se comporten como elementos en línea pero permitiendo dimensionamiento */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Elimina el subrayado */
+    transition: background-color 0.3s; /* Efecto suave al cambiar el color de fondo */
+}
+
+.students-button-container a:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón */
+}
+
+/* Tables */
+.table {
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form */
+.form-control {
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* Welcome Page */
+.welcome-container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    max-width: 400px;
+    margin-top: 10%;
+}
+
+.logo {
+    max-width: 300px;
+}
+
+.index_title {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+a.btn-primary {
+    margin-top: 20px;
+}
+
+/* Login Page */
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10%;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+
