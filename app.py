@@ -298,39 +298,22 @@ def descargar_alumnos_csv():
         log_error(f'Error al exportar datos de alumnos: {str(e)}')
         return jsonify({'message': 'Error al exportar datos', 'error': str(e)}), 500
     finally:
-<<<<<<< HEAD
-        if conn:
-            conn.close()
-            log_info('Conexión a la base de datos cerrada después de exportar datos')
-=======
         log_info('Conexión a la base de datos cerrada después de exportar datos')
         conn.close()
->>>>>>> 22d105a7726b713f591dce4bf549201051504df6
 
 # Ruta para logout
 @app.route('/logout')
 @login_required
 def logout():
-<<<<<<< HEAD
-    session.pop('username', None)
-    session.pop('role', None)
-    log_info(f'Usuario {username} ha cerrado sesión')
-    return redirect(url_for('index'))
-=======
     username = session.pop('username', None)  # Elimina el nombre de usuario de la sesión
     log_info(f'Usuario {username} ha cerrado sesión')
     session.pop('role', None)  # Elimina el rol de usuario de la sesión
     return redirect(url_for('index'))  # Redirige a la página de inicio
->>>>>>> 22d105a7726b713f591dce4bf549201051504df6
 
 # Ejecutar la aplicación Flask
 if __name__ == '__main__':
     log_info('La aplicación Flask está comenzando')
-<<<<<<< HEAD
-    app.run(debug=True)
-=======
     app.run(debug=True)  # Ejecuta la aplicación Flask en modo debug
     log_info('La aplicación Flask ha finalizado')
 
 
->>>>>>> 22d105a7726b713f591dce4bf549201051504df6
